@@ -6,22 +6,15 @@ import Repos from '../Repos/Repos';
 export default class App extends Component {
 
   state = {
-    inputText: '',
-    userInfo: { 
-      name: 'John Doe',
-      avatar_url: 'https://placekitten.com/200/200',
-      followers: 1,
-      following: 12,
-      url: 'http://www.hello.com'
+    inputText: 'mehtaphysical',
+    userInfo: {
+      name: '',
+      avatar_url: '',
+      followers: NaN,
+      following: NaN,
+      url: ''
     },
-    repos: [{ 
-      id: 1,
-      name: 'Lorem Ipsum' 
-    }, 
-    { 
-      id: 2,
-      name: 'Dolor' 
-    }]
+    repos: [{ id: NaN, name: '' }]
   };
 
   handleSubmit = (e) => {

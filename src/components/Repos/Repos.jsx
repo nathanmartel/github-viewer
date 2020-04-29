@@ -5,9 +5,10 @@ import Repo from '../Repo/Repo';
 
 const Repos = ({ repos }) => {
   const repoElements = repos.map(repo => (
-    <li key={repo.id}>
-      <Repo name={repo.name} />
-    </li>
+    repo.name && 
+      <li key={repo.id}>
+        <Repo name={repo.name} />
+      </li>
   ));
   
   return (

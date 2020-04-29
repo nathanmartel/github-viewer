@@ -9,27 +9,23 @@ exports[`App component renders App 1`] = `
   </header>
   <body>
     <GitSearch
-      inputText=""
+      inputText="mehtaphysical"
       onChange={[Function]}
       onSubmit={[Function]}
     />
     <UserInfo
-      avatar_url="https://placekitten.com/200/200"
-      followers={1}
-      following={12}
-      name="John Doe"
-      url="http://www.hello.com"
+      avatar_url=""
+      followers={NaN}
+      following={NaN}
+      name=""
+      url=""
     />
     <Repos
       repos={
         Array [
           Object {
-            "id": 1,
-            "name": "Lorem Ipsum",
-          },
-          Object {
-            "id": 2,
-            "name": "Dolor",
+            "id": NaN,
+            "name": "",
           },
         ]
       }

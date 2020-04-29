@@ -19,7 +19,9 @@ exports[`UserInfo component renders UserInfo 1`] = `
     <p>
       Followers: 
       1
-       | Following: 
+    </p>
+    <p>
+      Followers: 
       12
     </p>
     <p>
