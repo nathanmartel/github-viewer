@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PullRequests component renders PullRequests 1`] = `
+<ul>
+  <li
+    key="1"
+  >
+    <PullRequest
+      id={1}
+      number={5}
+      state="open"
+      title="Add this"
+      url="http://www.hello.com"
+    />
+  </li>
+  <li
+    key="2"
+  >
+    <PullRequest
+      id={2}
+      number={6}
+      state="closed"
+      title="Subtract that"
+      url="http://www.hello.com"
+    />
+  </li>
+</ul>
+`;
