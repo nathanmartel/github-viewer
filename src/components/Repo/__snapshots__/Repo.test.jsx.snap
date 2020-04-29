@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Repo component renders Repo 1`] = `
+<Fragment>
+  <h4>
+    Lorem Ipsum
+  </h4>
+</Fragment>
+`;
