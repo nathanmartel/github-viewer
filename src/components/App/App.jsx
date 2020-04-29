@@ -7,41 +7,45 @@ export default class App extends Component {
 
   state = {
     inputText: '',
-    data: {}
-  };
-
-  handleSubmit = (e) => {
-    e.preventDefault;
-    // const data = await fetch(`https://api.github.com/users/${this.state.inputText}`);
-    // this.setState({ data: data });
-  };
-
-  handleChange = ({ target }) => {
-    console.log('in handlechange and target is', target);
-    this.setState({ inputText: target.value });
-  };
-
-  render() {
-
-    const { inputText, data } = this.state;
-
-    const userInfo = { 
+    userInfo: { 
       name: 'John Doe',
       avatar_url: 'https://placekitten.com/200/200',
       followers: 1,
       following: 12,
       url: 'http://www.hello.com'
-    };
-
-    const repos = [{ 
+    },
+    repos: [{ 
       id: 1,
       name: 'Lorem Ipsum' 
     }, 
     { 
       id: 2,
       name: 'Dolor' 
-    }];
+    }]
+  };
 
+  handleSubmit = (e) => {
+    e.preventDefault();
+    fetch(`https://api.github.com/users/${this.state.inputText}`)
+      .then(res => res.json())
+      .then(data => { 
+        this.setState({ userInfo: data });
+      });
+    fetch(`https://api.github.com/users/${this.state.inputText}/repos`)
+      .then(res => res.json())
+      .then(data => { 
+        this.setState({ repos: data });
+      });
+    
+  };
+
+  handleChange = ({ target }) => {
+    this.setState({ inputText: target.value });
+  };
+
+  render() {
+
+    const { inputText, userInfo, repos } = this.state;
 
     return (
       <>
