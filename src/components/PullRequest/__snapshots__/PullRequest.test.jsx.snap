@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PullRequest component renders PullRequest 1`] = `
+<Fragment>
+  <br />
+  <a
+    href="http://www.hello.com"
+  >
+    (
+    open
+    ) - #
+    3
+     - 
+    Add thing
+  </a>
+</Fragment>
+`;
