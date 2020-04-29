@@ -4,30 +4,30 @@ import Repo from '../Repo/Repo';
 
 const Repos = ({ repos, user }) => {
   
-  const repoElements = (localFilter) => repos.map(repo => (
+  const [filter, setFilter] = useState('open');
+  const handleFilterChange = (e) => {
+    setFilter(e.target.value);
+  };
+
+  const repoElements = repos.map(repo => (
     repo.name && 
       <li key={repo.id}>
-        <Repo name={repo.name} user={user} filter={localFilter} />
+        <Repo name={repo.name} user={user} filter={filter} />
       </li>
   ));
   
-  const [filter, setFilter] = useState('open');
-  const handleFilterChange = (e) => {
-    console.log('filter', filter);
-    console.log('value', e.target.value);
-    setFilter(e.target.value);
-    console.log('filter', filter);
-  };
-
   return (
     <>
-      <select id='filterList' value={filter} onChange={ handleFilterChange } >
-        <option value='all'>All</option>
-        <option value='open'>Open</option>
-        <option value='closed'>Closed</option>
-      </select>
+      { repos[0].name && 
+      <label>Show pull requests that are: 
+        <select id='filterList' value={filter} onChange={ handleFilterChange } >
+          <option value='open'>Open</option>
+          <option value='closed'>Closed</option>
+          <option value='all'>All</option>
+        </select>
+      </label> }
       <ul>
-        {repoElements(filter)}
+        {repoElements}
       </ul>
     </>
   );

@@ -8,11 +8,6 @@ exports[`Repos component renders Repos 1`] = `
     value="open"
   >
     <option
-      value="all"
-    >
-      All
-    </option>
-    <option
       value="open"
     >
       Open
@@ -21,6 +16,11 @@ exports[`Repos component renders Repos 1`] = `
       value="closed"
     >
       Closed
+    </option>
+    <option
+      value="all"
+    >
+      All
     </option>
   </select>
   <ul>

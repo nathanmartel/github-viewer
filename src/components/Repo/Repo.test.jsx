@@ -4,8 +4,7 @@ import Repo from './Repo';
 
 describe('Repo component', () => {
   it('renders Repo', () => {
-    const name = 'Lorem Ipsum';
-    const wrapper = shallow(<Repo name={name} user={'username'} />);
+    const wrapper = shallow(<Repo name={'Lorem Ipsum'} user={'username'} filter={'all'} />);
     expect(wrapper).toMatchSnapshot();
   });
 });
