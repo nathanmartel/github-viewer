@@ -22,13 +22,17 @@ export default class Repo extends Component {
       title: 'Subtract that',
       state: 'closed',
       url: 'http://www.hello.com'
-    }]
+    }],
   }
 
   componentDidMount() {
-    fetch(`https://api.github.com/repos/${this.props.user}/${this.props.name}/pulls`)
+    fetch(`https://api.github.com/repos/${this.props.user}/${this.props.name}/pulls?state=${this.props.filter}`, {
+      headers: { Authorization: `token ${process.env.PERSONAL_ACCESS_TOKEN}` }
+    })
       .then(res => res.json())
       .then(data => { 
+        console.log('filter is', data);
+        console.log('data is', data);
         this.setState({ pullRequests: data });
       });
   }

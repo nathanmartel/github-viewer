@@ -9,7 +9,7 @@ exports[`App component renders App 1`] = `
   </header>
   <div>
     <GitSearch
-      inputText="mehtaphysical"
+      inputText="Alchimia-by-the-meeps"
       onChange={[Function]}
       onSubmit={[Function]}
     />

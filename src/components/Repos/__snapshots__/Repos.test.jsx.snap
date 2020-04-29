@@ -1,22 +1,47 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Repos component renders Repos 1`] = `
-<ul>
-  <li
-    key="1"
+<Fragment>
+  <select
+    id="filterList"
+    onChange={[Function]}
+    value="open"
   >
-    <Repo
-      name="Lorem Ipsum"
-      user="username"
-    />
-  </li>
-  <li
-    key="2"
-  >
-    <Repo
-      name="Dolor"
-      user="username"
-    />
-  </li>
-</ul>
+    <option
+      value="all"
+    >
+      All
+    </option>
+    <option
+      value="open"
+    >
+      Open
+    </option>
+    <option
+      value="closed"
+    >
+      Closed
+    </option>
+  </select>
+  <ul>
+    <li
+      key="1"
+    >
+      <Repo
+        filter="open"
+        name="Lorem Ipsum"
+        user="username"
+      />
+    </li>
+    <li
+      key="2"
+    >
+      <Repo
+        filter="open"
+        name="Dolor"
+        user="username"
+      />
+    </li>
+  </ul>
+</Fragment>
 `;
