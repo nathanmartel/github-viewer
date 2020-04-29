@@ -7,6 +7,7 @@ exports[`Repos component renders Repos 1`] = `
   >
     <Repo
       name="Lorem Ipsum"
+      user="username"
     />
   </li>
   <li
@@ -14,6 +15,7 @@ exports[`Repos component renders Repos 1`] = `
   >
     <Repo
       name="Dolor"
+      user="username"
     />
   </li>
 </ul>

@@ -1,14 +1,48 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import PullRequests from '../PullRequests/PullRequests';
 
-const Repo = ({ name }) => (
-  <>
-    <h4>{ name }</h4>
-  </>
-);
+export default class Repo extends Component {
+  static propTypes = {
+    user: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired
+  };
+  
+  state = {
+    pullRequests: [{ 
+      id: 1,
+      number: 5,
+      title: 'Add this',
+      state: 'open',
+      url: 'http://www.hello.com'
+    }, 
+    { 
+      id: 2,
+      number: 6,
+      title: 'Subtract that',
+      state: 'closed',
+      url: 'http://www.hello.com'
+    }]
+  }
 
-Repo.propTypes = {
-  name: PropTypes.string.isRequired
-};
+  componentDidMount() {
+    fetch(`https://api.github.com/repos/${this.props.user}/${this.props.name}/pulls`)
+      .then(res => res.json())
+      .then(data => { 
+        this.setState({ pullRequests: data });
+      });
+  }
 
-export default Repo;
+  render() {
+
+    const { name } = this.props;
+    const { pullRequests } = this.state;
+
+    return (
+      <>
+        <h4>{ name }</h4>
+        <PullRequests pullRequests={ pullRequests } />
+      </>
+    );
+  }
+}

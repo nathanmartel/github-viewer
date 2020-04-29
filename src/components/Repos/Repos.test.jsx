@@ -12,7 +12,7 @@ describe('Repos component', () => {
       id: 2,
       name: 'Dolor' 
     }];
-    const wrapper = shallow(<Repos repos={repos} />);
+    const wrapper = shallow(<Repos repos={repos} user={'username'} />);
     expect(wrapper).toMatchSnapshot();
   });
 });

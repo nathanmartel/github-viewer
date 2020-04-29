@@ -2,10 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const PullRequest = ({ number, title, state, url }) => (
-  <>
-    <br />
-    <a href={url}>({state}) - #{number} - {title}</a>
-  </>
+  <a href={url}>({state}) - #{number} - {title}</a>
 );
 
 PullRequest.propTypes = {

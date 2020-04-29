@@ -5,10 +5,9 @@ import PullRequest from '../PullRequest/PullRequest';
 
 const PullRequests = ({ pullRequests }) => {
   const pullRequestElements = pullRequests.map(pullRequest => (
-    pullRequest.id && 
-      <li key={pullRequest.id}>
-        <PullRequest {...pullRequest} />
-      </li>
+    <li key={pullRequest.id}>
+      <PullRequest {...pullRequest} />
+    </li>
   ));
   
   return (

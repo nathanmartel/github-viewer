@@ -5,5 +5,25 @@ exports[`Repo component renders Repo 1`] = `
   <h4>
     Lorem Ipsum
   </h4>
+  <PullRequests
+    pullRequests={
+      Array [
+        Object {
+          "id": 1,
+          "number": 5,
+          "state": "open",
+          "title": "Add this",
+          "url": "http://www.hello.com",
+        },
+        Object {
+          "id": 2,
+          "number": 6,
+          "state": "closed",
+          "title": "Subtract that",
+          "url": "http://www.hello.com",
+        },
+      ]
+    }
+  />
 </Fragment>
 `;

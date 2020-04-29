@@ -6,9 +6,10 @@ import Repos from '../Repos/Repos';
 export default class App extends Component {
 
   state = {
-    inputText: 'mehtaphysical',
+    inputText: 'Alchimia-by-the-meeps',
     userInfo: {
       name: '',
+      login: '',
       avatar_url: '',
       followers: NaN,
       following: NaN,
@@ -19,7 +20,10 @@ export default class App extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`https://api.github.com/users/${this.state.inputText}`)
+    // console.log('dot-env', process.env.PERSONAL_ACCESS_TOKEN);
+    fetch(`https://api.github.com/users/${this.state.inputText}`, {
+      headers: { Authorization: `token ${process.env.PERSONAL_ACCESS_TOKEN}` }
+    })
       .then(res => res.json())
       .then(data => { 
         this.setState({ userInfo: data });
@@ -45,11 +49,11 @@ export default class App extends Component {
         <header>
           <h1>GitHub Viewer</h1>
         </header>
-        <body>
+        <div>
           <GitSearch inputText={inputText} onSubmit={this.handleSubmit} onChange={this.handleChange} />
           <UserInfo {...userInfo} />
-          <Repos repos={repos} />
-        </body>
+          <Repos repos={repos} user={userInfo.login} />
+        </div>
       </>
     );
   }

@@ -7,7 +7,7 @@ exports[`App component renders App 1`] = `
       GitHub Viewer
     </h1>
   </header>
-  <body>
+  <div>
     <GitSearch
       inputText="mehtaphysical"
       onChange={[Function]}
@@ -17,6 +17,7 @@ exports[`App component renders App 1`] = `
       avatar_url=""
       followers={NaN}
       following={NaN}
+      login=""
       name=""
       url=""
     />
@@ -29,7 +30,8 @@ exports[`App component renders App 1`] = `
           },
         ]
       }
+      user=""
     />
-  </body>
+  </div>
 </Fragment>
 `;
