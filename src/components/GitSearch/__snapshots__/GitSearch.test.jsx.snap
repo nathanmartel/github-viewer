@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GitSearch component renders GitSearch 1`] = `
+<form>
+  <label>
+    GitHub username:
+    <input
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+  </label>
+  <button
+    type="submit"
+  >
+    Search
+  </button>
+</form>
+`;

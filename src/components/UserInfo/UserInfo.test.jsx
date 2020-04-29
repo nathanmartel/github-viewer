@@ -6,7 +6,7 @@ describe('UserInfo component', () => {
   it('renders UserInfo', () => {
     const userInfo = { 
       name: 'John Doe',
-      avatar_url: 'https://github.com/images/error/octocat_happy.gif',
+      avatar_url: 'https://placekitten.com/200/200',
       followers: 1,
       following: 12,
       url: 'http://www.hello.com'
