@@ -1,26 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-export default class GitSearch extends Component {
-  
-  state = {
-    inputText: ''
-  }
+const GitSearch = ({ inputText, onChange, onSubmit }) => (
 
-  handleChange = ({ target }) => {
-    this.setState({ [target.name]: target.value });
-  };
-  
-  render() {
-    const { inputText } = this.state;
-    const { onSubmit } = this.props;
+  <form onSubmit={onSubmit}>
+    <label>GitHub username:
+      <input type='text' onChange={onChange} value={inputText}></input>
+    </label>
+    <button type='submit'>Search</button>
+  </form>
 
-    return (
-      <form onSubmit={onSubmit}>
-        <label>GitHub username:
-          <input type='text' onChange={this.handleChange} value={inputText}></input>
-        </label>
-        <button type='submit'>Search</button>
-      </form>
-    );
-  }
-}
+);
+
+GitSearch.propTypes = {
+  inputText: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired
+};
+
+export default GitSearch;

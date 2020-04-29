@@ -9,6 +9,8 @@ exports[`App component renders App 1`] = `
   </header>
   <body>
     <GitSearch
+      inputText=""
+      onChange={[Function]}
       onSubmit={[Function]}
     />
     <UserInfo
